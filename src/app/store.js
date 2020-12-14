@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import snapshotReducer from '../features/snapshot/snapshotSlice';
+import formReducer from '../features/form/formSlice';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
-  },
+    snapshot: snapshotReducer,
+    form: formReducer
+  }
 });
