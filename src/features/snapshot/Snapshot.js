@@ -6,6 +6,7 @@ import {
   clearSnapshot,
   restoreSnapshot
 } from './snapshotSlice';
+import styles from './Snapshot.module.css';
 
 const withSnapshot = BaseComponent => ({ ...props }) => {
   const snapshot = useSelector(selectSnapshot);
@@ -41,29 +42,32 @@ const withSnapshot = BaseComponent => ({ ...props }) => {
   };
 
   return (
-    <div>
+    <div className={styles.root}>
       <input
+        className={styles.input}
         ref={ref => (input = ref)}
         placeholder="Paste snapshot to restore..."
         value={snapshotText}
         onChange={e => setSnapshotText(e.target.value)}
       />
-      <button
-        onClick={() => {
-          copyTextToClipboard(JSON.stringify(snapshot));
-          alert('Snapshot copied!');
-        }}
-      >
-        Copy State
-      </button>
+      <div className={styles.actions}>
+        <button
+          onClick={() => {
+            copyTextToClipboard(JSON.stringify(snapshot));
+            alert('Snapshot copied!');
+          }}
+        >
+          Copy State
+        </button>
 
-      <button
-        disabled={!validSnapshot} // enable the restore action only if the snapshot is valid
-        onClick={() => dispatch(restoreSnapshot(snapshotText))}
-      >
-        Restore State
-      </button>
-      <button onClick={() => dispatch(clearSnapshot())}>Clear State</button>
+        <button
+          disabled={!validSnapshot} // enable the restore action only if the snapshot is valid
+          onClick={() => dispatch(restoreSnapshot(snapshotText))}
+        >
+          Restore State
+        </button>
+        <button onClick={() => dispatch(clearSnapshot())}>Clear State</button>
+      </div>
       <BaseComponent
         {...props}
         updateSnapshot={updateSnapshot}

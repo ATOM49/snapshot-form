@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
-  height: 100vh;
-  padding: 24px;
+  display: flex;
+  justify-content: center;
+  height: 95%;
+  margin-top: 5%;
+  overflow-y: auto;
 }

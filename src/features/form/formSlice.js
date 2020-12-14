@@ -11,9 +11,8 @@ export const formSlice = createSlice({
       state.formItems = state.formItems.concat(action.payload);
     },
     removeFormItem: (state, action) => {
-      console.log('action', action.payload)
       state.formItems = state.formItems.filter(
-        formItem => formItem !== action.payload
+        formItem => formItem.id !== action.payload.id
       );
     }
   }

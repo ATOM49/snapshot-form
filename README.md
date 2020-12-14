@@ -1,5 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+# Snapshot Form
+Add a radio button and checkbox component to a form and restore any state of the submission. <br/>
+
+Web Browser
+![alt text](https://github.com/ATOM49/snapshot-form/blob/main/screenshots/browser.png?raw=true)
+
+Mobile Browser
+![alt text](https://github.com/ATOM49/snapshot-form/blob/main/screenshots/mobile.png?raw=true)
+
 ## Available Scripts
 
 In the project directory, you can run:

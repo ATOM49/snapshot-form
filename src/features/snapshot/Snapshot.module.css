@@ -1,6 +1,15 @@
-.formItem {
-  margin-right: 8px;
+.root {
+  width: 50%;
 }
-.formLabel {
-  margin-right: 24px;
+.input {
+  display: flex;
+  width: 100%;
+  margin-bottom: 12px;
+  align-content: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
 }

@@ -28,31 +28,34 @@ const Form = ({ updateSnapshot, snapshot, ...props }) => {
 
   return (
     <div>
+      <div className={styles.actions}>
+        {FormItemTypes.map((
+          formItemType // create a generic button to add formItem in the formSlice
+        ) => (
+          <button onClick={() => addNewFormItem(formItemType)}>
+            Add {formItemType} item
+          </button>
+        ))}
+      </div>
       {formItems.map(formItem => {
         return (
-          <span key={uuidv4()}>
-            <input
-              className={styles.formItem}
-              type={formItem.type}
-              id={formItem.id}
-              checked={isChecked(formItem)}
-              onChange={e => dispatch(updateSnapshot(formItem))}
-            />
-            <label className={styles.formLabel}>{formItem.value}</label>
+          <div className={styles.item} key={uuidv4()}>
+            <div className={styles.info}>
+              <input
+                className={styles.input}
+                type={formItem.type}
+                id={formItem.id}
+                checked={isChecked(formItem)}
+                onChange={e => dispatch(updateSnapshot(formItem))}
+              />
+              <label className={styles.label}>{formItem.value}</label>
+            </div>
             <button onClick={() => dispatch(removeFormItem(formItem))}>
               Remove
             </button>
-            <br />
-          </span>
+          </div>
         );
       })}
-      {FormItemTypes.map((
-        formItemType // create a generic button to add formItem in the formSlice
-      ) => (
-        <button onClick={() => addNewFormItem(formItemType)}>
-          Add {formItemType} item
-        </button>
-      ))}
     </div>
   );
 };

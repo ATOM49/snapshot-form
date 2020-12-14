@@ -1,6 +1,21 @@
-.formItem {
+.item {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.info {
+  display: inline;
+}
+.input {
   margin-right: 8px;
 }
-.formLabel {
+.label {
   margin-right: 24px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 12px;
 }
